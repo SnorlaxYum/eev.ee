@@ -2,8 +2,8 @@
 
 <aside id="sidebar">
     {% macro _render_link(title, url, color, image, desc) %}
-        <li{% if '{{ title }}/' in output_file %} class="selected"{% else %} style="background-color: {{ color }};"{% endif %}>
-            <a{% if '{{ title }}/' in output_file %}{% else %} href="{{ url }}"{% endif %}>
+        <li{% if url in output_file %} class="selected"{% endif %} style="background-color: {{ color }};">
+            <a{% if url in output_file %}{% else %} href="{{ url }}"{% endif %}>
                 <div class="-glyph">
                     <img src="{{ SITEURL }}/theme/images/{{ image }}" alt="{{ title }}">
                 </div>
